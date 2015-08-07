@@ -1,0 +1,27 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'run', 'watch' ]
+2 info using npm@1.4.6
+3 info using node@v0.10.26
+4 verbose node symlink /usr/local/bin/node
+5 verbose run-script [ 'prewatch', 'watch', 'postwatch' ]
+6 info prewatch webpack-react@0.0.1
+7 info watch webpack-react@0.0.1
+8 verbose unsafe-perm in lifecycle true
+9 info webpack-react@0.0.1 Failed to exec watch script
+10 error webpack-react@0.0.1 watch: `webpack-dev-server --hot --inline --progress --colors`
+10 error Exit status 8
+11 error Failed at the webpack-react@0.0.1 watch script.
+11 error This is most likely a problem with the webpack-react package,
+11 error not with npm itself.
+11 error Tell the author that this fails on your system:
+11 error     webpack-dev-server --hot --inline --progress --colors
+11 error You can get their info via:
+11 error     npm owner ls webpack-react
+11 error There is likely additional logging output above.
+12 error System Darwin 14.4.0
+13 error command "node" "/usr/local/bin/npm" "run" "watch"
+14 error cwd /Users/roybailey/Coding/github/research-react
+15 error node -v v0.10.26
+16 error npm -v 1.4.6
+17 error code ELIFECYCLE
+18 verbose exit [ 1, true ]
