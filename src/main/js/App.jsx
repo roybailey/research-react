@@ -4,13 +4,6 @@ import dataGenerator from './dataGenerator';
 import HelloForm from './HelloForm';
 import Ticket from './Ticket';
 import LineChart from './TicketChart';
-
-//var Pagination = require('./Pagination');
-//var Chart = require('./Chart');
-//var Stats = require('./Stats');
-//var ShowHideTooltips = require('./ShowHideTooltips');
-//var AddRemoveDatum = require('./AddRemoveDatum');
-
 import appStyle from './App.less';
 
 class App extends React.Component {
