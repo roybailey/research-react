@@ -25,7 +25,7 @@ var config = {
     entry: [
         'babel-polyfill',
         'webpack/hot/only-dev-server',
-        './src/app/App.js'
+        './src/index.js'
     ],
     output: {
         path: path.join(__dirname, 'public', 'dist'),
