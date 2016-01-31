@@ -1,26 +1,30 @@
 var webpack = require('webpack');
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var autoprefixer = require('autoprefixer');
 
 console.log("Building for "+process.env.NODE_ENV);
 
 function getEntrySources(sources) {
     //if (process.env.NODE_ENV !== 'production') {
-        sources.push('webpack-dev-server/client?http://localhost:8080');
-        sources.push('webpack/hot/only-dev-server');
+       // sources.push('webpack-dev-server/client?http://localhost:3030');
+       sources.push('webpack/hot/only-dev-server');
     //}
+    // sources.push('webpack-dev-server');
     return sources;
 }
 
 var config = {
     devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
-    //entry: {
+    // entry: {
     //    ResearchReact: getEntrySources([
     //        'babel-polyfill',
     //        './src/app/App.js'
     //    ])
-    //},
+    // },
     entry: [
         'babel-polyfill',
+        'webpack/hot/only-dev-server',
         './src/app/App.js'
     ],
     output: {
@@ -42,7 +46,8 @@ var config = {
                     presets: ['stage-0', 'es2015', 'react']
                 }
             },
-            {test: /\.css$/, loader: 'style-loader!css-loader'},
+            // {test: /\.css$/, loader: 'style-loader!css-loader'},
+            {test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader') },
             {test: /\.scss$/, loaders: ['style', 'css', 'sass']},
             {test: /\.less$/, loaders: ['style', 'css', 'less']},
             {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file"},
@@ -74,16 +79,21 @@ var config = {
         ]
     },
     devServer: {
-        contentBase: "./public",
+        contentBase: "./",
         //noInfo: true, //  --no-info option
         inline: true,
         colors: true,
         hot: true,
         historyApiFallback: true
     },
+    postcss: [ 
+      autoprefixer({ browsers: ['last 2 versions'] }) 
+    ],
     plugins: [
-        new webpack.NoErrorsPlugin()
-        , new webpack.ProvidePlugin({
+        new ExtractTextPlugin('simple.css', { allChunks: true }),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin(),
+        new webpack.ProvidePlugin({
             ReactDOM: 'react-dom',
             React: 'react'
         })
