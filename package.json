@@ -6,10 +6,13 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base ./ --progress --colors --port 3030",
     "build": "NODE_ENV=production webpack -p --progress --colors",
-    "watch": "webpack-dev-server --content-base ./ --hot --inline --progress --colors --port 3030",
-    "http": "http-server -p 3030 ."
+    "webpack": "webpack -w",
+    "start": "babel-node --debug --presets es2015 -- server.js --debug",
+    "http": "http-server -p 3030 .",
+    "test": "mocha test/**/*-test.js --compilers js:babel-core/register",
+    "test-api": "mocha test/api/*-test.js --compilers js:babel-core/register",
+    "test-action": "mocha test/action/*-test.js --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
@@ -56,6 +59,7 @@
   },
   "devDependencies": {
     "autoprefixer": "6.3.1",
+    "babel-cli": "6.4.5",
     "babel-core": "^6.4.0",
     "babel-loader": "^6.2.1",
     "babel-plugin-transform-runtime": "^6.4.3",
