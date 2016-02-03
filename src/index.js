@@ -58,7 +58,7 @@ ReactDOM.render(
 
                     <IndexRoute component={Home}/>
                     <Route path="movies" component={Movies}/>
-                    <Route path="/movie/:id/:name" component={Movie}/>
+                    <Route path="movie/:id" component={Movie}/>
                 </Route>
             </Router>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
-import { fetchMovies } from '../actions/movies'
+import { fetchMovies } from '../actions/movie-action'
 import Loader from '../components/Loader'
 import styles from './Movies.css'
 
@@ -24,8 +24,8 @@ function Movies({ neo4jMovies, fetchMovies }) {
       neo4jMovies.map(function (m) {
         return (
           <li key={m.id}>
-            <Link to={`/movie/${m.id}/${m.name}`}>
-              <p className={styles.name}>{m.name}</p>
+            <Link to={`/movie/${m.id}`}>
+              <p className={styles.name}>{m.title} ({m.released})</p>
             </Link>
           </li>
         )

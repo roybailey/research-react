@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchPackages } from '../actions/movies'
+import { fetchMovies } from '../actions/movie-action'
 import { Link } from 'react-router'
 import styles from './Home.css'
 
@@ -15,7 +15,7 @@ function Home({ items, fetchMovies }) {
     return (
         <div className={styles.home}>
             <p className={styles.description}>
-                <Link to="/movies">No idea how this works...</Link>
+                <Link to="/movies">Link to Movies...</Link>
             </p>
         </div>
     );

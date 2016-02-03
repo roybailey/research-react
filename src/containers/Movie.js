@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { fetchMovie } from '../actions/movies';
+import { fetchMovie } from '../actions/movie-action';
 import Loader from '../components/Loader';
 import MovieItem from '../components/MovieItem';
 import styles from './Movie.css';
@@ -14,11 +14,11 @@ class Movie extends Component {
 
     componentDidMount() {
         /* fetch the neo4j movie */
-        this.fetchMovie(this.props.params.name)
+        this.fetchMovie(this.props.params.id);
     }
 
-    fetchMovie(name) {
-        this.props.dispatch(fetchMovie(name))
+    fetchMovie(id) {
+        this.props.dispatch(fetchMovie(id));
     }
 
     render() {
