@@ -10,6 +10,7 @@ target
 build
 node_modules
 .module-cache
+_assets
 
 # Package Files #
 *.class

@@ -5,26 +5,10 @@ var autoprefixer = require('autoprefixer');
 
 console.log("Building for "+process.env.NODE_ENV);
 
-function getEntrySources(sources) {
-    //if (process.env.NODE_ENV !== 'production') {
-       // sources.push('webpack-dev-server/client?http://localhost:3030');
-       sources.push('webpack/hot/only-dev-server');
-    //}
-    // sources.push('webpack-dev-server');
-    return sources;
-}
-
 var config = {
     devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
-    // entry: {
-    //    ResearchReact: getEntrySources([
-    //        'babel-polyfill',
-    //        './src/app/App.js'
-    //    ])
-    // },
     entry: [
         'babel-polyfill',
-        'webpack/hot/only-dev-server',
         './src/index.js'
     ],
     output: {
@@ -78,41 +62,19 @@ var config = {
             }
         ]
     },
-    devServer: {
-        contentBase: "./",
-        //noInfo: true, //  --no-info option
-        inline: true,
-        colors: true,
-        hot: true,
-        historyApiFallback: true
-    },
+    //devServer: {
+    //    contentBase: "./",
+    //    inline: true,
+    //    colors: true,
+    //    historyApiFallback: true
+    //},
     postcss: [ 
       autoprefixer({ browsers: ['last 2 versions'] }) 
     ],
     plugins: [
-        new ExtractTextPlugin('simple.css', { allChunks: true }),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
-        new webpack.ProvidePlugin({
-            ReactDOM: 'react-dom',
-            React: 'react'
-        })
+        new ExtractTextPlugin('bundle.css', { allChunks: true })
+        //, new webpack.NoErrorsPlugin()
     ]
 };
-
-
-/*
- * If bundling for production, optimize output
-if (process.env.NODE_ENV === 'production') {
-    config.devtool = false;
-    config.plugins = [
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({comments: false}),
-        new webpack.DefinePlugin({
-            'process.env': {NODE_ENV: JSON.stringify('production')}
-        })
-    ];
-}
- */
 
 module.exports = config;

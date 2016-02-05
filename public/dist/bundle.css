@@ -141,20 +141,23 @@
   color: #61dafb;
   margin-bottom: 0px;
 }
-.Movie__package___GtYo2 {
-  margin-top: 280px;
-  margin-bottom: 150px;
+.Movie__movie___2rwQb {
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding-left: 5%;
   padding-right: 5%;
 }.Movies__movies___2cQgv {
   background-color: #fff;
-  margin-top: 280px;
-  margin-bottom: 150px;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .Movies__title___2Kv-3 {
   text-align: center;
   color: #fff;
+  font-size: 150%;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .Movies__list___3MseF {
@@ -165,16 +168,11 @@
 .Movies__row___2UNBW {
   background-color: #444;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
-
-.Movies__name___tyZFa {
-  font-size: 26px;
-  margin-bottom: 0px;
-  margin-top: 0px;  
-}.Home__home___2RN_K {
-  margin-top: 5px;
+.Home__home___2RN_K {
+  margin: 1em;
 }
 
 .Home__home___2RN_K a {
@@ -183,29 +181,26 @@
 }
 .Home__description___3oAxn {
   font-size: 32px;
-  padding-top: 10%;
+  padding-top: 1em;
   padding-left: 5%;
   padding-right: 5%;
 }
 
-.Home__description___3oAxn span{
+.Home__description___3oAxn span {
   color: #808080;
   font-size: 32px;
 }
-
-.Home__dark___IPpGx {
-  color: #444;
-  background-color: #61dafb;
-  margin-right: 5px;
-  margin-left: 5px;
+/*
+.main-header {
+  position: relative;
+  top: 0;
+  height: 3em;
+  width: 100%;
+  background-color: #ddd;
+  text-align: center;
 }
-
-.Home__light___3ouIp {
-  color: #61dafb;
-  background-color: #444;
-  margin-right: 5px;
-  margin-left: 5px;
-}.MainHeader__main-header___3jUV5 {
+*/
+.MainMenu__main-header___3_kQp {
   position: relative;
   top: 0px;
   height: 280px;
@@ -214,7 +209,7 @@
   text-align: center;
 }
 
-.MainHeader__dark___3zdVv {
+.MainMenu__dark___2hvMQ {
   color: #444;
   background-color: #61dafb;
   display: inline-block;
@@ -223,12 +218,12 @@
   padding-bottom: 20px;
 }
 
-.MainHeader__dark___3zdVv:hover  {
+.MainMenu__dark___2hvMQ:hover  {
   color: #444;
   background-color: #61dafb;
 }
 
-.MainHeader__light___3KgYV {
+.MainMenu__light___26RsY {
   color: #61dafb;
   background-color: #444;
   display: inline-block;
@@ -237,18 +232,18 @@
   padding-bottom: 20px;
 }
 
-.MainHeader__light___3KgYV:hover {
+.MainMenu__light___26RsY:hover {
   color: #61dafb;
   background-color: #444;
 }
 
 /* react spinning logo */
 
-.MainHeader__wrapper___2ERSu {
+.MainMenu__wrapper___28oIz {
   height: 300px;
 }
 
-.MainHeader__inner___3yBgF {
+.MainMenu__inner___dpOLZ {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -260,7 +255,7 @@
           transform: rotate(120deg);
 }
 
-.MainHeader__innerdot___1hS_y {
+.MainMenu__innerdot___3L21C {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -272,7 +267,7 @@
   margin-left: -15px;
 }
 
-.MainHeader__react___3SjB8 {
+.MainMenu__react___30ubU {
   display: block;
   position: relative;
   left: 50%;
@@ -281,12 +276,12 @@
   height: 50px;
   margin: -75px 0 0 -75px;
   border-radius: 50%;
-  -webkit-animation: MainHeader__spin___3E0e9 10s linear infinite;
-          animation: MainHeader__spin___3E0e9 10s linear infinite;
+  -webkit-animation: MainMenu__spin___2JveC 10s linear infinite;
+          animation: MainMenu__spin___2JveC 10s linear infinite;
   z-index: 11;
 }
 
-.MainHeader__react___3SjB8:before {
+.MainMenu__react___30ubU:before {
   content: "";
   position: absolute;
   top: 0px;
@@ -299,7 +294,7 @@
           transform: rotate(-120deg);
 }
 
-.MainHeader__react___3SjB8:after {
+.MainMenu__react___30ubU:after {
   content: "";
   position: absolute;
   top: 0px;
@@ -310,7 +305,7 @@
   border: 3px solid #61dafb;
 }
 
-@-webkit-keyframes MainHeader__spin___3E0e9 {
+@-webkit-keyframes MainMenu__spin___2JveC {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -321,7 +316,7 @@
   }
 }
 
-@keyframes MainHeader__spin___3E0e9 {
+@keyframes MainMenu__spin___2JveC {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -331,7 +326,7 @@
             transform: rotate(360deg);
   }
 }
-@-webkit-keyframes MainHeader__spin-reverse___1yXyT {
+@-webkit-keyframes MainMenu__spin-reverse___1puuH {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -341,7 +336,7 @@
             transform: rotate(-360deg);
   }
 }
-@keyframes MainHeader__spin-reverse___1yXyT {
+@keyframes MainMenu__spin-reverse___1puuH {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -353,7 +348,7 @@
 }
 .MainFooter__main-footer___2SgAE {
   position: relative;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
   height: 70px;
   padding-top: 30px;
@@ -362,38 +357,11 @@
   font-size: 24px;
 }
 
-.MainFooter__footer___11MbC span {
+.MainFooter__main-footer___2SgAE span {
   color: #fff;
 }
 
-.MainFooter__heart___2Oggo{
-    position: relative;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-    background-color: #61dafb;
-}
-.MainFooter__heart___2Oggo:before,
-.MainFooter__heart___2Oggo:after{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    content: '';
-    border-radius: 50%;
-    background-color: #61dafb;
-}
-.MainFooter__heart___2Oggo:before{
-    bottom: 0px;
-    left: -10px;
-}
-.MainFooter__heart___2Oggo:after{
-    top: -10px;
-    right: 0px;
-}html {
+html {
   color: #444;
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #fff;
@@ -515,4 +483,4 @@ h1 {
     }
 }
 
-/*# sourceMappingURL=simple.css.map*/
+/*# sourceMappingURL=bundle.css.map*/

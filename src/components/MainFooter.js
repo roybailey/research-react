@@ -7,9 +7,7 @@ class MainFooter extends Component {
     render() {
         return (
             <div styleName='main-footer'>
-                <span>made with </span>
-
-                <div styleName='heart'></div>
+                <span>MIT License</span>
             </div>
         )
     }
