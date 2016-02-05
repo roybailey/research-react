@@ -46,6 +46,16 @@ import Movies from './containers/Movies'
 import Home from './containers/Home'
 import App from './containers/App'
 
+import About from './app/About'
+import ServerError from './app/ServerError';
+
+import ChartApp from './react-chart/js/App.jsx';
+
+import KanbanBoardContainer from './kanban/components/KanbanBoardContainer';
+import KanbanBoard from './kanban/components/KanbanBoard';
+import EditCard from './kanban/components/EditCard';
+import NewCard from './kanban/components/NewCard';
+
 // generic styles
 import styles from './styles/base.css'
 
@@ -59,6 +69,15 @@ ReactDOM.render(
                     <IndexRoute component={Home}/>
                     <Route path="movies" component={Movies}/>
                     <Route path="movie/:id" component={Movie}/>
+
+                    <Route path="about" component={About} title="About Page"/>
+                    <Route path="chart" component={ChartApp} title="Chart App"/>
+                    <Route path="kanban" component={KanbanBoardContainer} title="Kanban App">
+                        <IndexRoute component={KanbanBoard}/>
+                        <Route path="new" component={NewCard} />
+                        <Route path="edit/:card_id" component={EditCard} />
+                    </Route>
+
                 </Route>
             </Router>
         </div>
