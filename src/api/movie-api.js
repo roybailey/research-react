@@ -15,24 +15,49 @@ class MovieAPI extends AbstractAPI {
         RETURN  id(movie) as id,
                 movie.title as title,
                 movie.tagline as tagline,
-                movie.released as released`
+                'unknown' as description,
+                'todo' as status,
+                '#FF0000' as color,
+                movie.released as released,
+                id(actor) as actorId,
+                actor.name as actorName`
     }
 
 
-    decodeRow(row) {
-        return {
-            id: row.id,
-            title: row.title,
-            tagline: row.tagline,
-            released: row.released
-        };
+    decodeRow(response, row) {
+        var found = [];
+        for(var index = 0; index < response.length && found.length === 0; ++index) {
+            if(response[index].id === row.id)
+                found.push(response[index]);
+        }
+        if(found.length !== 1) {
+            console.log("creating record for id:"+row.id);
+            found = [{
+                id: row.id,
+                title: row.title,
+                tagline: row.tagline,
+                description: row.description,
+                status: row.status,
+                color: row.color,
+                released: row.released,
+                tasks: []
+            }];
+            response.push(found[0]);
+        }
+        console.log(JSON.stringify(found[0],null,2));
+        found[0].tasks.push({
+            id: row.actorId,
+            name: row.actorName,
+            done: false
+        });
+        return found[0];
     }
 
 
     // Return all records
     findCypher(params) {
         return {
-            statement: `MATCH (movie:Movie)` + MovieAPI.RETURN()
+            statement: `MATCH (movie:Movie)-[r:ACTED_IN]-(actor:Person)` + MovieAPI.RETURN()
         };
     }
 

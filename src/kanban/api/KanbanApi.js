@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 import 'babel-polyfill';
 
-const API_URL = 'http://kanbanapi.pro-react.com';
+const API_URL = 'http://localhost:3030/api';
 const API_HEADERS = {
   'Content-Type': 'application/json',
   Authorization: 'any-string-you-like'
@@ -9,12 +9,12 @@ const API_HEADERS = {
 
 let KanbanAPI = {
   fetchCards() {
-    return fetch(`${API_URL}/cards`, {headers:API_HEADERS})
+    return fetch(`${API_URL}/movie`, {headers:API_HEADERS})
     .then((response) => response.json())
   },
 
   addCard(card) {
-    return fetch(`${API_URL}/cards`, {
+    return fetch(`${API_URL}/movie`, {
       method: 'post',
       headers: API_HEADERS,
       body: JSON.stringify(card)
@@ -23,7 +23,7 @@ let KanbanAPI = {
   },
 
   updateCard(card, draftCard) {
-    return fetch(`${API_URL}/cards/${card.id}`, {
+    return fetch(`${API_URL}/movie/${card.id}`, {
     	method: 'put',
     	headers: API_HEADERS,
     	body: JSON.stringify(draftCard)
@@ -31,7 +31,7 @@ let KanbanAPI = {
   },
 
   persistCardDrag(cardId, status, index) {
-    return fetch(`${API_URL}/cards/${cardId}`, {
+    return fetch(`${API_URL}/movie/${cardId}`, {
     	method: 'put',
     	headers: API_HEADERS,
     	body: JSON.stringify({status, row_order_position: index})
@@ -39,7 +39,7 @@ let KanbanAPI = {
   },
 
   addTask(cardId, task) {
-    return fetch(`${API_URL}/cards/${cardId}/tasks`, {
+    return fetch(`${API_URL}/movie/${cardId}/tasks`, {
       method: 'post',
       headers: API_HEADERS,
       body: JSON.stringify(task)
@@ -48,14 +48,14 @@ let KanbanAPI = {
   },
 
   deleteTask(cardId, task) {
-    return fetch(`${API_URL}/cards/${cardId}/tasks/${task.id}`, {
+    return fetch(`${API_URL}/movie/${cardId}/tasks/${task.id}`, {
       method: 'delete',
       headers: API_HEADERS
     })
   },
 
   toggleTask(cardId, task) {
-    return fetch(`${API_URL}/cards/${cardId}/tasks/${task.id}`, {
+    return fetch(`${API_URL}/movie/${cardId}/tasks/${task.id}`, {
     	method: 'put',
     	headers: API_HEADERS,
     	body: JSON.stringify({done:!task.done})

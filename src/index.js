@@ -45,16 +45,15 @@ import Movie from './containers/Movie'
 import Movies from './containers/Movies'
 import Home from './containers/Home'
 import App from './containers/App'
+import About from './containers/About'
+import ServerError from './containers/ServerError'
 
-import About from './app/About'
-import ServerError from './app/ServerError';
+import ChartApp from './react-chart/js/App.jsx'
 
-import ChartApp from './react-chart/js/App.jsx';
-
-import KanbanBoardContainer from './kanban/components/KanbanBoardContainer';
-import KanbanBoard from './kanban/components/KanbanBoard';
-import EditCard from './kanban/components/EditCard';
-import NewCard from './kanban/components/NewCard';
+import KanbanBoardContainer from './kanban/components/KanbanBoardContainer'
+import KanbanBoard from './kanban/components/KanbanBoard'
+import EditCard from './kanban/components/EditCard'
+import NewCard from './kanban/components/NewCard'
 
 // generic styles
 import styles from './styles/base.css'

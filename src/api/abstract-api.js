@@ -28,14 +28,14 @@ class AbstractAPI {
     }
 
 
-    decodeRow(row) {
+    decodeRow(response, row) {
         return row;
     }
 
     decoder(results) {
         var response = [];
         results[0].forEach((row)=> {
-            response.push(this.decodeRow(row));
+            this.decodeRow(response,row);
         });
         console.log(JSON.stringify(response));
         return response;
