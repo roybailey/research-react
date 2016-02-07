@@ -1,12 +1,13 @@
 'use strict';
 import Neo4j from 'rainbird-neo4j';
+import { LOG } from '../utils'
 
 class AbstractAPI {
 
     constructor(db, apiName) {
         this.db = db;
         this.apiName = apiName;
-        console.log("Requesting..." +this.apiName);
+        console.log("Requesting..." + this.apiName);
         // test out connectivity...
         this.find(null, (err, data)=> {
             if (err) {
@@ -27,17 +28,26 @@ class AbstractAPI {
         console.log("----------");
     }
 
+    logResults(name, results) {
+        console.log(name + " returned " + results.length);
+        if (results.length > 1) {
+            console.log(JSON.stringify(results[0]) + "..." + JSON.stringify(results[results.length - 1]));
+        }
+        else if (results.length === 1) {
+            console.log(JSON.stringify(results[0]));
+        }
+    }
 
     decodeRow(response, row) {
         return row;
     }
 
-    decoder(results) {
+    decoder(name, results) {
         var response = [];
         results[0].forEach((row)=> {
-            this.decodeRow(response,row);
+            this.decodeRow(response, row);
         });
-        console.log(JSON.stringify(response));
+        LOG(name, true, response);
         return response;
     }
 
@@ -53,14 +63,8 @@ class AbstractAPI {
                 console.log(err);
                 callback(err, null);
             } else {
-                console.log(results.length);
-                if (results.length > 1) {
-                    console.log(JSON.stringify(results[0]) + "..." + JSON.stringify(results[results.length - 1]));
-                }
-                else if (results.length === 1) {
-                    console.log(JSON.stringify(results[0]));
-                }
-                callback(null, this.decoder(results));
+                this.logResults("find",results);
+                callback(null, this.decoder("find", results));
             }
         });
     }
@@ -77,8 +81,8 @@ class AbstractAPI {
                 console.log(err);
                 callback(err, null);
             } else {
-                console.log(JSON.stringify(results, null, 2));
-                callback(null, this.decoder(results)[0]);
+                this.logResults("get", results);
+                callback(null, this.decoder("get", results)[0]);
             }
         });
     }
@@ -95,8 +99,8 @@ class AbstractAPI {
                 console.log(err);
                 callback(err, null);
             } else {
-                console.log(JSON.stringify(results));
-                callback(null, this.decoder(results)[0]);
+                this.logResults("create", results);
+                callback(null, this.decoder("create", results)[0]);
             }
         });
     }
@@ -113,8 +117,8 @@ class AbstractAPI {
                 console.log(err);
                 callback(err, null);
             } else {
-                console.log(JSON.stringify(results, null, 2));
-                callback(null, this.decoder(results)[0]);
+                this.logResults("update", results);
+                callback(null, this.decoder("update", results)[0]);
             }
         });
     }
@@ -131,8 +135,8 @@ class AbstractAPI {
                 console.log(err);
                 callback(err, null);
             } else {
-                console.log(JSON.stringify(results, null, 2));
-                callback(null, this.decoder(results)[0]);
+                this.logResults("patch", results);
+                callback(null, this.decoder("patch", results)[0]);
             }
         });
     }
@@ -149,7 +153,7 @@ class AbstractAPI {
                 console.log(err);
                 callback(err, null);
             } else {
-                console.log(JSON.stringify(results, null, 2));
+                this.logResults("remove", results);
                 callback(null, results);
             }
         });

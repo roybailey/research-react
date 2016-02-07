@@ -80724,7 +80724,7 @@
 	    return fetch(API_URL + '/movie/' + cardId, {
 	      method: 'put',
 	      headers: API_HEADERS,
-	      body: (0, _stringify2.default)({ status: status, row_order_position: index })
+	      body: (0, _stringify2.default)({ id: cardId, status: status, row_order_position: index })
 	    });
 	  },
 	  addTask: function addTask(cardId, task) {
