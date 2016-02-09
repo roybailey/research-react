@@ -21,7 +21,7 @@ class MovieAPI extends AbstractAPI {
                 movie.title as title,
                 movie.tagline as tagline,
                 'unknown' as description,
-                'todo' as status,
+                movie.status as status,
                 '#FF0000' as color,
                 movie.released as released `
     }
@@ -37,7 +37,7 @@ class MovieAPI extends AbstractAPI {
                 movie.title as title,
                 movie.tagline as tagline,
                 'unknown' as description,
-                'todo' as status,
+                movie.status as status,
                 '#FF0000' as color,
                 movie.released as released,
                 id(actor) as actorId,
@@ -57,7 +57,7 @@ class MovieAPI extends AbstractAPI {
                 title: row.title,
                 tagline: row.tagline,
                 description: row.description,
-                status: row.status,
+                status: row.status || 'todo',
                 color: row.color,
                 released: row.released,
                 tasks: []

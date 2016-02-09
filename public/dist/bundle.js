@@ -5369,11 +5369,11 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _About = __webpack_require__(820);
+	var _About = __webpack_require__(622);
 	
 	var _About2 = _interopRequireDefault(_About);
 	
-	var _ServerError = __webpack_require__(821);
+	var _ServerError = __webpack_require__(623);
 	
 	var _ServerError2 = _interopRequireDefault(_ServerError);
 	
@@ -40436,8 +40436,150 @@
 	module.exports = {"main-footer":"MainFooter__main-footer___2SgAE"};
 
 /***/ },
-/* 622 */,
-/* 623 */,
+/* 622 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _getPrototypeOf = __webpack_require__(445);
+	
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+	
+	var _classCallCheck2 = __webpack_require__(448);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(449);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _possibleConstructorReturn2 = __webpack_require__(452);
+	
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+	
+	var _inherits2 = __webpack_require__(475);
+	
+	var _inherits3 = _interopRequireDefault(_inherits2);
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(208);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var About = function (_Component) {
+	  (0, _inherits3.default)(About, _Component);
+	
+	  function About() {
+	    (0, _classCallCheck3.default)(this, About);
+	    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(About).apply(this, arguments));
+	  }
+	
+	  (0, _createClass3.default)(About, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'h1',
+	        null,
+	        this.props.route.title
+	      );
+	    }
+	  }]);
+	  return About;
+	}(_react.Component);
+	
+	exports.default = About;
+
+/***/ },
+/* 623 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _getPrototypeOf = __webpack_require__(445);
+	
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+	
+	var _classCallCheck2 = __webpack_require__(448);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(449);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _possibleConstructorReturn2 = __webpack_require__(452);
+	
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+	
+	var _inherits2 = __webpack_require__(475);
+	
+	var _inherits3 = _interopRequireDefault(_inherits2);
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(208);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var styles = {
+	  root: {
+	    textAlign: 'center'
+	  },
+	  alert: {
+	    fontSize: 80,
+	    fontWeight: 'bold',
+	    color: '#e9ab2d'
+	  }
+	};
+	
+	var ServerError = function (_Component) {
+	  (0, _inherits3.default)(ServerError, _Component);
+	
+	  function ServerError() {
+	    (0, _classCallCheck3.default)(this, ServerError);
+	    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ServerError).apply(this, arguments));
+	  }
+	
+	  (0, _createClass3.default)(ServerError, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { style: styles.root },
+	        _react2.default.createElement(
+	          'div',
+	          { style: styles.alert },
+	          '⚠'
+	        ),
+	        ' ',
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Ops, we have a problem'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Sorry, we could\'t access the repositories. Please try again in a few moments.'
+	        )
+	      );
+	    }
+	  }]);
+	  return ServerError;
+	}(_react.Component);
+	
+	exports.default = ServerError;
+
+/***/ },
 /* 624 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -81770,150 +81912,6 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 820 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var _getPrototypeOf = __webpack_require__(445);
-	
-	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-	
-	var _classCallCheck2 = __webpack_require__(448);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(449);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	var _possibleConstructorReturn2 = __webpack_require__(452);
-	
-	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-	
-	var _inherits2 = __webpack_require__(475);
-	
-	var _inherits3 = _interopRequireDefault(_inherits2);
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(208);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var About = function (_Component) {
-	  (0, _inherits3.default)(About, _Component);
-	
-	  function About() {
-	    (0, _classCallCheck3.default)(this, About);
-	    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(About).apply(this, arguments));
-	  }
-	
-	  (0, _createClass3.default)(About, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'h1',
-	        null,
-	        this.props.route.title
-	      );
-	    }
-	  }]);
-	  return About;
-	}(_react.Component);
-	
-	exports.default = About;
-
-/***/ },
-/* 821 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var _getPrototypeOf = __webpack_require__(445);
-	
-	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-	
-	var _classCallCheck2 = __webpack_require__(448);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(449);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	var _possibleConstructorReturn2 = __webpack_require__(452);
-	
-	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-	
-	var _inherits2 = __webpack_require__(475);
-	
-	var _inherits3 = _interopRequireDefault(_inherits2);
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(208);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var styles = {
-	  root: {
-	    textAlign: 'center'
-	  },
-	  alert: {
-	    fontSize: 80,
-	    fontWeight: 'bold',
-	    color: '#e9ab2d'
-	  }
-	};
-	
-	var ServerError = function (_Component) {
-	  (0, _inherits3.default)(ServerError, _Component);
-	
-	  function ServerError() {
-	    (0, _classCallCheck3.default)(this, ServerError);
-	    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ServerError).apply(this, arguments));
-	  }
-	
-	  (0, _createClass3.default)(ServerError, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { style: styles.root },
-	        _react2.default.createElement(
-	          'div',
-	          { style: styles.alert },
-	          '⚠'
-	        ),
-	        ' ',
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Ops, we have a problem'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Sorry, we could\'t access the repositories. Please try again in a few moments.'
-	        )
-	      );
-	    }
-	  }]);
-	  return ServerError;
-	}(_react.Component);
-	
-	exports.default = ServerError;
 
 /***/ }
 /******/ ]);
