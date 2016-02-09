@@ -5397,10 +5397,6 @@
 	
 	var _NewCard2 = _interopRequireDefault(_NewCard);
 	
-	var _base = __webpack_require__(819);
-	
-	var _base2 = _interopRequireDefault(_base);
-	
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -5435,6 +5431,7 @@
 	// container route components
 	
 	// generic styles
+	// import styles from './styles/base.css'
 	
 	// routes...
 	_reactDom2.default.render(_react2.default.createElement(
@@ -72288,7 +72285,7 @@
 	        { className: 'app' },
 	        _react2.default.createElement(
 	          _reactRouter.Link,
-	          { to: '/new', className: 'float-button' },
+	          { to: '/kanban/new', className: 'float-button' },
 	          '+'
 	        ),
 	        _react2.default.createElement(_List2.default, { id: 'todo',
@@ -81906,12 +81903,6 @@
 	};
 	
 	exports.default = _utils.Container.create(NewCard);
-
-/***/ },
-/* 819 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

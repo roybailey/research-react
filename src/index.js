@@ -56,7 +56,7 @@ import EditCard from './kanban/components/EditCard'
 import NewCard from './kanban/components/NewCard'
 
 // generic styles
-import styles from './styles/base.css'
+// import styles from './styles/base.css'
 
 // routes...
 ReactDOM.render(

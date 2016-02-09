@@ -8,7 +8,7 @@ class KanbanBoard extends Component {
   render(){
     return (
       <div className="app">
-        <Link to='/new' className="float-button">+</Link>
+        <Link to='/kanban/new' className="float-button">+</Link>
 
         <List id='todo'
               title="To Do"
