@@ -91,7 +91,7 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
     "webpack-dev-server": "^3.11.0",
-    "xlsx": "0.8.0",
+    "xlsx": "0.17.0",
     "xml-parser": "1.2.1",
     "xmldoc": "0.4.0"
   }
